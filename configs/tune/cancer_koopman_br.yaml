@@ -1,0 +1,70 @@
+# @package _global_
+tune:
+  model:
+    use_global:
+      - True
+      # - False
+    
+    hiddens_D_net: 
+      -
+        - 16
+      - 
+        - 32
+      - 
+        - 40
+      - 
+        - 20
+      -
+        - 24
+      - 
+        - 128
+      - 
+        - 32
+        - 16
+      - 
+        - 64
+      - 
+        - 48
+      -
+        - 256
+      -
+        - 64
+        - 32
+      - 
+        - 8
+
+    activation:
+      - relu
+      - elu
+
+  exp:
+    weight_decay_D: 
+      # - 1.e-6
+      # - 1.e-5
+      - 0.
+      
+    lr_D:
+      - 1.e-4
+      # - 1.e-3
+      - 2.e-4
+      # - 1.e-5
+    lr:
+      # - 2.e-3
+      - 1.e-3
+
+    lambda_DD:
+      - 0.1
+      # - 0.01
+      - 1
+      # - 0.05
+      # - 0.5
+    
+    balancing:
+      - grad_reverse
+      - ct
+      
+    
+exp:
+  mode: tune
+  gpu_resources: 0.4
+  cpu_resources: 2

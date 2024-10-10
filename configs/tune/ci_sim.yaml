@@ -1,0 +1,77 @@
+# @package _global_
+tune:
+  model:
+    hiddens_D_net:
+      # - 
+      #   - 16
+      # - 
+      #   - 8
+      # - 
+      #   - 4
+      # - 
+      #   - 32
+      # - 
+      #   - 16
+      #   - 16
+      # -
+      #   - 32
+      #   - 16
+      - 
+        - 8
+      -
+        - 16
+      - 
+        - 32
+    br_size:
+      # - 16
+      # - 2
+      # - 8
+      - 16
+    # balancing:
+    #   - mine-regression
+  exp:
+    
+    update_lambda_D:
+      - True
+      # - False
+    lambda_D:
+      # - 0.0
+      # - 0
+      # - 1
+      # - 0.1
+      - 0.01
+    lr:
+      # - 1.e-4
+      - 1.e-3
+      # - 0
+    #   # - 1.e-2
+    lr_D:
+      # - 1.e-1
+      - 1.e-4
+      - 1.e-3
+      - 2.e-4
+      - 1.e-5
+    weight_decay: 
+      - 1.e-5
+      # - 1.e-4
+    weight_decay_D: 
+      # - 0
+      - 1.e-5
+
+    dropout:
+      # - 0.1
+      - 0
+  
+    epochs:
+      # - 1
+      - 300
+      # - 100
+    lambda_Y: 
+      # - 0.01
+      - 1
+    lambda_X:
+      # - 0.01
+      - 0.1
+      
+exp:
+  mode: tune

@@ -1,0 +1,86 @@
+# @package _global_
+tune:
+  model:
+    use_global:
+      - True
+      # - False
+    num_sins: 
+      - 1
+      # - 2
+      # - 5
+    num_poly: 
+      # - 1
+      # - 2
+      - 3
+    num_exp: 
+      - 1
+      # - 2
+      # - 3
+    d_model: 
+      # - 8
+      # - 12
+      - 16
+      
+    koopman_dim_add:
+      - 0
+      # - 4
+      # - 12
+
+    hiddens_G_y: 
+      # - 
+      #   - 32
+      -
+        - 16
+
+    # num_layers:
+    #   # - 1
+    #   - 2
+    #   - 3
+
+    # num_layers_koopman:
+    #   # - 1
+    #   - 2
+    #   - 3
+
+
+  exp:
+    lambda_D:
+      - 0.1
+    update_lambda_D:
+      # - False
+      - True
+    dropout: 
+      - 0.
+      # - 0.1
+      # - 0.2
+      # - 0.3
+    weight_decay: 
+      # - 1.e-6
+      - 1.e-5
+      # - 0.
+      # - 2.e-5
+      # - 5.e-5
+    batch_size: 
+      # - 64
+      - 128
+      # - 256
+    lr:
+      - 1.e-3
+      - 2.e-3
+      # - 1.e-5
+    update_freq:
+      # - 20
+      # - 30
+      # - 50
+      - -1
+    epoch_w:
+      - 5
+      # - 10
+    
+exp:
+  mode: tune
+  gpu_resources: 0.4
+  cpu_resources: 2
+  records_exp:
+    - update_freq
+  

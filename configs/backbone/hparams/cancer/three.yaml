@@ -1,0 +1,25 @@
+# @package _global_
+dataset:
+  coeff: 3
+
+model:
+  init: 0.001
+  d_model: 16
+  hiddens_G_y:
+    - 32
+  use_global: true
+  num_sins: 1
+  num_poly: 3
+  koopman_dim_add: 0
+
+exp:
+  batch_size: 128
+  epochs: 150
+  lambda_D: 0.1
+  lr: 0.002
+  update_lambda_D: true
+  weight_decay: 1.0e-05
+  weight_decay_D: 0
+  update_freq: 30
+  epoch_w: 10
+  dropout: 0.0

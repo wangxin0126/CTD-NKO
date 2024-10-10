@@ -1,0 +1,60 @@
+# @package _global_
+tune:
+  model:
+    hiddens_D_net:
+      - 
+        - 16
+      # - 
+      #   - 8
+      # -
+      #   - 12
+      # - 
+      #   - 32
+    hiddens_G_y: 
+      - 
+        - 32
+      - 
+        - 16
+      -
+        - 8
+      
+  exp:
+    lambda_D:
+      - 0.0
+      - 0.01
+      # - 0.001
+    epochs:
+      - 150
+    lr:
+      - 2.e-3
+      - 1.e-3
+    # batch_size:
+    #   - 128
+    update_lambda_D:
+      - True
+      # - False
+    weight_decay:
+      # - 0
+      - 1.e-5
+      # - 5.e-5
+    weight_decay_D:
+      - 0
+      # - 1.e-5
+    lr_D:
+      - 1.e-4
+      # - 2.e-5
+      # - 1.e-5
+      # - 2.e-4
+      # - 2.e-4
+      # - 1.e-3
+    dropout:
+      - 0.1
+      - 0.2
+      - 0.
+    batch_size:
+      - 128
+      - 256
+      - 64
+    
+exp:
+  mode: tune

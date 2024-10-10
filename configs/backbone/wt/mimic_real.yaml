@@ -1,0 +1,53 @@
+# @package _global_
+model:
+  name: CTD_NKO
+  _target_: src.models.ctd_nko_wt.CTD_NKO_WT
+  transpose: False
+  use_global: True
+  transpose_size: 64
+  num_sins: 7
+  num_poly: 3
+  num_exp: 1
+  
+  d_model: 24
+  num_layers: 2
+
+  koopman_dim_add: 28
+  num_layers_koopman: 2
+
+  dims_hidden: 
+    - -1
+    # - 128
+  hiddens_G_y: 
+    - 16
+  hiddens_G_x:
+    - 32
+  hiddens_G_w:
+    - 16
+
+exp:
+  seed: 10
+  batch_size: 64
+  dropout: 0.2
+  sch_patience: 500
+  sch_patience_D: 500
+  cooldown: 10
+  patience: 500
+  factor: 0.5
+  epochs: 150
+  epoch_w: 5
+  lr: 1.e-2
+  lr_D: 1.e-4
+  weight_decay: 2.e-5
+  weight_decay_D: 0
+  update_freq: -1
+  update_lambda_D: False
+  lambda_D: 0.1
+  lambda_X: 0.1
+  lambda_Y: 1
+  loss_type_X: l2
+  load_best: True
+  val: True
+  weights_ema: True
+  ema_y: True
+  ema_hidden: False

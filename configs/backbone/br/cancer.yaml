@@ -1,0 +1,57 @@
+# @package _global_
+model:
+  name: CTD_NKO_BR
+  _target_: src.models.ctd_nko_br.CTD_NKO_BR
+  transpose: False
+  use_global: True
+  transpose_size: 64
+  num_sins: 3
+  num_poly: 3
+  num_exp: 1
+  
+  d_model: 16
+  num_layers: 2
+
+  koopman_dim_add: 0
+  num_layers_koopman: 2
+
+  dims_hidden: 
+    - -1
+  hiddens_G_y: 
+    - 32
+  hiddens_G_x: 
+    - 16
+  hiddens_G_w:
+    - 16
+  activation: elu
+  hiddens_D_net:
+  - 64
+  - 32
+
+exp:
+  seed: 10
+  batch_size: 128
+  dropout: 0.
+  sch_patience: 500
+  sch_patience_D: 500
+  cooldown: 10
+  patience: 500
+  factor: 0.5
+  epochs: 150
+  lr: 1.e-3
+  lr_D: 1.e-4
+  weight_decay: 1.e-6
+  weight_decay_D: 0
+  update_lambda_D: False
+  lambda_D: 0.1
+  lambda_X: 0.1
+  lambda_Y: 1
+  loss_type_X: l2
+  load_best: True
+  val: True
+  weights_ema: True
+  ema_y: False
+  ema_hidden: False
+  balancing: ct
+  lambda_DD: 1
+  
