@@ -1,4 +1,4 @@
-# Enhancing Counterfactual Estimation: The Role of Treatment in Temporal Interaction
+# Enhancing Counterfactual Estimation: A Focus on Temporal Treatments
 
 ## Project Description
 
